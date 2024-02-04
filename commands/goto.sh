@@ -22,3 +22,5 @@ goto() {
     cd "$DEST"
   fi
 }
+
+export -f goto
