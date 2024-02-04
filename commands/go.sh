@@ -11,7 +11,7 @@ go() {
     version=$(cat $(pwd)/.go-version)
   fi
 
-  docker container run -it --rm --mount type=bind,src=$(pwd),dst=/go --workdir /go --name go:$(version) golang:$(version) go "$*"
+  docker container run -it --rm --mount type=bind,src=$(pwd),dst=/app --workdir /app --name go-v$version golang:$version go "$@"
 }
 
 export -f go 
